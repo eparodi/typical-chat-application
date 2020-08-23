@@ -1,0 +1,29 @@
+version: "3.6"
+
+services:
+
+    sockets:
+        build:
+            context: .
+        volumes:
+        - .:/code:z
+        ports:
+        - 8000:8000
+        restart: on-failure
+        env_file: .env
+        links:
+        - "redis"
+        dns:
+        - 8.8.8.8
+
+    redis:
+        image: bitnami/redis
+        restart: on-failure
+        env_file: .env
+        ports:
+        - "6379:6379"
+        volumes:
+        - redis_data:/bitnami/redis/data
+
+volumes:
+  redis_data: {}
