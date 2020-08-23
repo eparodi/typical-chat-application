@@ -1,0 +1,13 @@
+<div class="card col-md-6 offset-md-3">
+    <div class="card-body">
+        <form [formGroup]="form">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" aria-describedby="usernameHelp"
+                    placeholder="Enter username" formControlName="username">
+                <small id="usernameHelp" class="form-text text-muted">Username.</small>
+            </div>
+            <button class="btn btn-primary float-right" (click)="connect()">Submit</button>
+        </form>
+    </div>
+</div>

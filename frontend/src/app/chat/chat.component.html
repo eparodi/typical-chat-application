@@ -1,0 +1,20 @@
+<div class="card col-md-6 offset-md-3 chat">
+    <div class="card-body">
+        <div>
+            <p *ngFor="let message of messages">{{message}}</p>
+        </div>
+    </div>
+</div>
+<br>
+<div class="card col-md-6 offset-md-3">
+    <div class="card-body">
+        <form [formGroup]="form">
+            <div class="form-group">
+                <label for="message">Mensaje</label>
+                <textarea type="text" class="form-control" id="message"
+                    placeholder="Enter message" formControlName="message"></textarea>
+            </div>
+            <button class="btn btn-primary float-right" (click)="sendMessage()">Submit</button>
+        </form>
+    </div>
+</div>
